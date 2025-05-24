@@ -54,3 +54,7 @@ Adding the lead to Google Sheets
 Sending Discord notification instantly
 
 Scheduling a follow-up reminder 1 hour before the appointment
+
+<div align="center">
+  <strong>Made with 1% logic, 99% panic. by <a href="https://github.com/AstroDOG3">AstroDOG3</a></strong>
+</div>
