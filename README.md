@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏠 Dynasty 8 Real Estate Lead Management
 
-## Getting Started
+A simple yet effective real estate lead submission platform built with **Next.js**, integrated with **Google Sheets** and **Discord** via **n8n** automation. This project helps agents collect lead information efficiently and stay notified about upcoming appointments.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 🌐 User-friendly lead submission website
+- 📋 Collects data: name, phone number, email, budget, location, and appointment date
+- 📄 Automatically stores lead data in Google Sheets
+- 🔔 Sends instant notifications to Discord when a new lead submits
+- ⏰ Sends reminders to agents 1 hour before the scheduled appointment
+- 🗺️ Includes Google Maps link of the lead's interested location in Discord reminders
+
+---
+
+## 📂 Tech Stack
+
+- **Frontend:** Next.js (App Router), Tailwind CSS
+- **Automation:** n8n (Webhook + Discord + Google Sheets integration)
+- **Database:** Google Sheets (for lead collection)
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AstroDOG3/Brainiacs.git
+cd Brainiacs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run the development server
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🛠️ Setup Instructions
+Ensure your Google Sheets and Discord webhook setup is complete in n8n
 
-## Learn More
+Your route.ts inside /app/api/submit/ sends POST data to n8n webhook
 
-To learn more about Next.js, take a look at the following resources:
+n8n handles:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Adding the lead to Google Sheets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Sending Discord notification instantly
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Scheduling a follow-up reminder 1 hour before the appointment
