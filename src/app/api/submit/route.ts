@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const data = await req.json();
     console.log("📥 Received data from frontend:", data);
 
-    const webhookUrl = "https://astrodog3.app.n8n.cloud/webhook/dynasty8";
+    const webhookUrl = "https://<your-n8n-url>.app.n8n.cloud/webhook/<path>>";
 
     const res = await fetch(webhookUrl, {
       method: 'POST',
